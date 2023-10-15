@@ -2,17 +2,17 @@ import React,{useState, Fragment} from 'react'
 
 const C02aumentar = () => {
 
-    const [numero, setNumero]= useState(0);
+    const [edad, setEdad]= useState(20);
 
-    const aumentar = () => {
-        console.log("Hacer click");
-        setNumero(numero + 1)
+    const aumentar = (msj) => {
+        console.log("Edad");
+        setEdad(msj.xVariable)
     }
 
     return (
         <Fragment>
-            <h3>Mi primer componente {numero}</h3>
-            <button onClick={aumentar}>Aumentar</button>
+            <h3>Aumentar edad {edad}</h3>
+            <button onClick={aumentar}>Edad</button>
         </Fragment>
     )
 }
