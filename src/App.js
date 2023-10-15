@@ -9,7 +9,7 @@ function App() {
     <div>
       <h1>React</h1>
       <C01componente/>
-      <C04variable xVariable="Leer esta variable" />
+      <C04variable xVariable="Esta es la variable" />
       <C02aumentar/>
     </div>
   );

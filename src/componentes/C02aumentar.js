@@ -1,10 +1,11 @@
 import React,{useState, Fragment} from 'react'
 
-const C02aumentar = () => {
+const C02aumentar = (msj) => {
 
     const [edad, setEdad]= useState(20);
 
     const aumentar = (msj) => {
+        xVariable=30
         console.log("Edad");
         setEdad(msj.xVariable)
     }
