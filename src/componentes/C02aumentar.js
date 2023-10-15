@@ -1,6 +1,6 @@
 import React,{useState, Fragment} from 'react'
 
-const Contador = () => {
+const C02aumentar = () => {
 
     const [numero, setNumero]= useState(0);
 
