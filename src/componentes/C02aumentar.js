@@ -5,7 +5,7 @@ const C02aumentar = () => {
     const [edad, setEdad]= useState(20);
     const xVariable = 30;
 
-    const aumentar = () => {
+    const aumentar = (xVariable) => {
         //xVariable=30
         console.log("Aumentar");
         setEdad(xVariable + 1)
