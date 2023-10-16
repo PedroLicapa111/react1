@@ -5,13 +5,14 @@ import C04variable from './componentes/C04variable';
 import C02aumentar from './componentes/C02aumentar';
 
 function App() {  
-  
+  const valorNumerico = 50;
+
   return (
     <div>
       <h1>React</h1>
       <C01componente/>
       <C04variable xVariable="Esta es la variable" />
-      <C02aumentar/>
+      <C02aumentar valor={valorNumerico}/>
     </div>
   );
 }
