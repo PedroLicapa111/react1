@@ -3,6 +3,7 @@ import './App.css';
 import C01componente from './componentes/C01componente';
 import C04variable from './componentes/C04variable';
 import C02aumentar from './componentes/C02aumentar';
+import AppForm from './componentes/AppForm';
 
 function App() {  
   
@@ -12,6 +13,7 @@ function App() {
       <C01componente/>
       <C04variable xVariable="Esta es la variable" />
       <C02aumentar/>
+      <AppForm/>
     </div>
   );
 }
