@@ -1,6 +1,3 @@
-
-//import './App.css';
-
 import AppForm from './componentes/AppForm';
 
 function App() {  
@@ -10,6 +7,7 @@ function App() {
     width:"350px", 
     padding:"10px"}}>            
       <AppForm/>
+      <i class="large material-icons">insert_chart</i>
     </div>
   );
 }
