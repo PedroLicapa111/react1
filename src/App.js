@@ -1,17 +1,19 @@
-import AppForm from './componentes/AppForm';
+import { useEffect, useState } from 'react';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import Dashboard from './public/Dashboard';
+import Home from './public/Home';
+import PublicRutas from './ruteo/PublicRutas';
+import {useAuth} from "./ruteo/AuthContext";
+import ProtectedRutas from './ruteo/ProtectedRutas';
 
-function App() {  
-  
+function App() {
+  const { user } = useAuth();
   return (
-    <div style={{background:"yellow", 
-    width:"350px", 
-    padding:"10px"}}>            
-      <AppForm/>
-      <i class="large material-icons">insert_chart</i>
-
-      <p>1. Juan Manuel 23 Masculino    x   A</p>
-      <p>2. Deigo Gabriel 29 Masculino    x   A</p>
-      <p>3. Luis Miguel 41 Masculino    x   A</p>
+    <div style={{background:"plum"}}>
+      <Router>
+        {user ? <ProtectedRutas/> : <PublicRutas/>}
+        <PublicRutas/>
+      </Router>
     </div>
   );
 }
