@@ -36,11 +36,9 @@ const PublicRutas = () => {
       <nav>
         <div id="login">
           <ul>
-            <li><Link to="/nuevoregistro">Registrar </Link></li>
-
-            <li><Link onClick={handleSignOut} >Cerrar sesión</Link> </li>
             <li> <Link to="/Iniciarsesion">Iniciar sesión</Link> </li>
-            
+            <li><Link to="/nuevoregistro">Registrar </Link></li>
+            <li><Link onClick={handleSignOut} >Cerrar sesión</Link> </li>                       
           </ul>
         </div>
         
@@ -55,6 +53,9 @@ const PublicRutas = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/nuevoregistro" element={<RegisterForm />} />
         <Route path="/iniciarsesion" element={<LoginForm />} />
+
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/contacto" element={<Contacto />} />
       </Routes> 
     </div>
   )

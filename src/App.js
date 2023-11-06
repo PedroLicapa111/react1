@@ -11,8 +11,7 @@ function App() {
   return (
     <div style={{background:"plum"}}>
       <Router>
-        {user ? <ProtectedRutas/> : <PublicRutas/>}
-        <PublicRutas/>
+        {user ? <ProtectedRutas/> : <PublicRutas/>}        
       </Router>
     </div>
   );
