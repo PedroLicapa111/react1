@@ -11,13 +11,22 @@ import { useNavigate } from 'react-router-dom';
 ///////////////// PROTEGIDA - SistemaCRUD //////////////
 import SistemaCRUD from '../protegido/SistemaCRUD';
 import ListaDeAlumnos from '../protegido/sistemacrud/ListaDeAlumnos';
+import ListaDeDeportes from '../protegido/sistemacrud/ListaDeDeportes';
+import ListaDeProfesores from '../protegido/sistemacrud/ListaDeProfesores';
+import ListaDeCarreras from '../protegido/sistemacrud/ListaDeCarreras';
 
 ///////////////// PROTEGIDA - SistemaFILE //////////////
 import SistemaFILE from '../protegido/SistemaFILE';
+import Documentos from '../protegido/sistemafile/Documentos';
 import Fotos from '../protegido/sistemafile/Fotos';
+import Videos from '../protegido/sistemafile/Videos';
+
 
 //////////////////////// PAG. PUBLICOS /////////////////
 
+
+//////////////////////// PAG. MENU /////////////////
+import AppLista from '../protegido/sistemacrud/AppLista'
 
 const ProtectedRutas = () => {
   const { user } = useAuth();
@@ -50,8 +59,13 @@ const ProtectedRutas = () => {
         <div id="menu">
           <ul>
             <li><Link to="/sistema-crud/alumnos">Alumnos</Link> </li>
+            <li><Link to="/sistema-crud/profesores">Profesores</Link> </li>
+            <li><Link to="/sistema-crud/deportes">Deportes</Link> </li>
+            <li><Link to="/sistema-crud/carreras">Carreras</Link> </li>
                     
+            <li><Link to="/sistema-file/documentos">Documentos</Link> </li>
             <li><Link to="/sistema-file/fotos">Fotos</Link> </li>
+            <li><Link to="/sistema-file/videos">Videos</Link> </li>
           </ul>
         </div>
       </nav>
@@ -60,13 +74,37 @@ const ProtectedRutas = () => {
         
         <Route path="/sistema-crud" element={<MarcoParaSistemaCRUD />}>
           <Route index element={<SistemaCRUD />} />
-          <Route path="alumnos" element={<ListaDeAlumnos />} />
+          <Route path="alumnos" element={<ListaDeAlumnos />} />          
+        </Route>
+        
+        <Route path="/sistema-crud" element={<MarcoParaSistemaCRUD />}>
+          <Route index element={<SistemaCRUD />} />
+          <Route path="deportes" element={<ListaDeDeportes />} />          
         </Route>
 
+        <Route path="/sistema-crud" element={<MarcoParaSistemaCRUD />}>
+          <Route index element={<SistemaCRUD />} />
+          <Route path="profesores" element={<ListaDeProfesores />} />          
+        </Route>
+
+        <Route path="/sistema-crud" element={<MarcoParaSistemaCRUD />}>
+          <Route index element={<SistemaCRUD />} />
+          <Route path="carreras" element={<ListaDeCarreras />} />          
+        </Route>
+
+        <Route path="/sistema-file" element={<MarcoParaSistemaFILE />}>
+          <Route index element={<SistemaFILE />} />
+          <Route path="documentos" element={<Documentos />} />
+        </Route>
 
         <Route path="/sistema-file" element={<MarcoParaSistemaFILE />}>
           <Route index element={<SistemaFILE />} />
           <Route path="fotos" element={<Fotos />} />
+        </Route>
+
+        <Route path="/sistema-file" element={<MarcoParaSistemaFILE />}>
+          <Route index element={<SistemaFILE />} />
+          <Route path="videos" element={<Videos />} />
         </Route>
 
       </Routes>        
@@ -85,7 +123,7 @@ function MarcoParaSistemaCRUD() {
 
 function MarcoParaSistemaFILE() {
   return (
-    <div style={{background:"slateblue", padding:"10px"}}>
+    <div style={{background:"white", padding:"10px"}}>
       <h1>Marco Sistema FILES</h1>
       < Outlet /> {/* Aquí se mostrarán las rutas secundarias */}
     </div>

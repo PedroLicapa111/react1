@@ -56,7 +56,7 @@ function App() {
    }
 
   return (
-    <div style={{background:"yellow", width:"350px", padding:"10px"}}>
+    <div style={{background:"green", width:"350px", padding:"10px"}}>
       <h1>App.js</h1>
       <Appform {...{idActual, setIdActual, fnRead}}></Appform>
       {

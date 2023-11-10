@@ -9,7 +9,7 @@ import ProtectedRutas from './ruteo/ProtectedRutas';
 function App() {
   const { user } = useAuth();
   return (
-    <div style={{background:"plum"}}>
+    <div style={{background: "yellow" }}>
       <Router>
         {user ? <ProtectedRutas/> : <PublicRutas/>}        
       </Router>

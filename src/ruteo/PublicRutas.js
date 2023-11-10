@@ -12,6 +12,10 @@ import Dashboard from '../public/Dashboard';
 import LoginForm from '../login/LoginForm';
 import Contacto from '../public/Contacto';
 import RegisterForm from '../login/RegisterForm';
+import Info from '../public/Info';
+import News from '../public/News';
+
+
 
 const PublicRutas = () => {
   const { user } = useAuth();
@@ -36,15 +40,17 @@ const PublicRutas = () => {
       <nav>
         <div id="login">
           <ul>
-            <li> <Link to="/Iniciarsesion">Iniciar sesión</Link> </li>
+            <li><Link to="/iniciarsesion">Iniciar sesión</Link> </li>
             <li><Link to="/nuevoregistro">Registrar </Link></li>
-            <li><Link onClick={handleSignOut} >Cerrar sesión</Link> </li>                       
+            <li><Link onClick={handleSignOut} >Cerrar sesión</Link> </li>            
           </ul>
         </div>
         
         <div id="menu">
           <ul>
             <li><Link to="/home">Home</Link> </li>
+            <li><Link to="/informacion">Informacion </Link></li>                    
+            <li><Link to="/noticias">Noticias </Link></li>
           </ul>
         </div>
       </nav>
@@ -54,6 +60,9 @@ const PublicRutas = () => {
         <Route path="/nuevoregistro" element={<RegisterForm />} />
         <Route path="/iniciarsesion" element={<LoginForm />} />
 
+        <Route path="/informacion" element={<Info />} />
+        <Route path="/noticias" element={<News />} />
+        
         <Route path="/" element={<Dashboard />} />
         <Route path="/contacto" element={<Contacto />} />
       </Routes> 
