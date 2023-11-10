@@ -5,28 +5,28 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from './AuthContext';
 import { getAuth, signOut } from 'firebase/auth';
-import "./BarraNavegacion.css";
+//import "./BarraNavegacion.css";
 import { useNavigate } from 'react-router-dom';
 
 ///////////////// PROTEGIDA - SistemaCRUD //////////////
 import SistemaCRUD from '../protegido/SistemaCRUD';
 import ListaDeAlumnos from '../protegido/sistemacrud/ListaDeAlumnos';
 import ListaDeDeportes from '../protegido/sistemacrud/ListaDeDeportes';
-import ListaDeProfesores from '../protegido/sistemacrud/ListaDeProfesores';
+import ListaDeEgresados from '../protegido/sistemacrud/ListaDeEgresados';
 import ListaDeCarreras from '../protegido/sistemacrud/ListaDeCarreras';
 
 ///////////////// PROTEGIDA - SistemaFILE //////////////
 import SistemaFILE from '../protegido/SistemaFILE';
 import Documentos from '../protegido/sistemafile/Documentos';
 import Fotos from '../protegido/sistemafile/Fotos';
+import Word from '../protegido/sistemafile/Word';
 import Videos from '../protegido/sistemafile/Videos';
-
 
 //////////////////////// PAG. PUBLICOS /////////////////
 
 
 //////////////////////// PAG. MENU /////////////////
-import AppLista from '../protegido/sistemacrud/AppLista'
+import AppLista from '../protegido/sistemacrud/AppLista';
 
 const ProtectedRutas = () => {
   const { user } = useAuth();
@@ -58,14 +58,16 @@ const ProtectedRutas = () => {
             
         <div id="menu">
           <ul>
-            <li><Link to="/sistema-crud/alumnos">Alumnos</Link> </li>
-            <li><Link to="/sistema-crud/profesores">Profesores</Link> </li>
-            <li><Link to="/sistema-crud/deportes">Deportes</Link> </li>
             <li><Link to="/sistema-crud/carreras">Carreras</Link> </li>
-                    
-            <li><Link to="/sistema-file/documentos">Documentos</Link> </li>
-            <li><Link to="/sistema-file/fotos">Fotos</Link> </li>
-            <li><Link to="/sistema-file/videos">Videos</Link> </li>
+            <li><Link to="/sistema-crud/deportes">Deportes</Link> </li>
+            <li><Link to="/sistema-crud/egresados">Egresados</Link> </li> 
+            <li><Link to="/sistema-crud/alumnos">Alumnos(AppLista)</Link> </li>                                  
+
+            <li><Link to="/sistema-file/videos">Videos</Link> </li>   
+            <li><Link to="/sistema-file/fotos">Fotos</Link> </li>  
+            <li><Link to="/sistema-file/documentos">PDF</Link> </li>
+            <li><Link to="/sistema-file/word">Word</Link> </li>
+            
           </ul>
         </div>
       </nav>
@@ -84,12 +86,17 @@ const ProtectedRutas = () => {
 
         <Route path="/sistema-crud" element={<MarcoParaSistemaCRUD />}>
           <Route index element={<SistemaCRUD />} />
-          <Route path="profesores" element={<ListaDeProfesores />} />          
+          <Route path="egresados" element={<ListaDeEgresados />} />          
         </Route>
 
         <Route path="/sistema-crud" element={<MarcoParaSistemaCRUD />}>
           <Route index element={<SistemaCRUD />} />
           <Route path="carreras" element={<ListaDeCarreras />} />          
+        </Route>
+
+        <Route path="/sistema-file" element={<MarcoParaSistemaFILE />}>
+          <Route index element={<SistemaFILE />} />
+          <Route path="videos" element={<Videos />} />
         </Route>
 
         <Route path="/sistema-file" element={<MarcoParaSistemaFILE />}>
@@ -104,13 +111,15 @@ const ProtectedRutas = () => {
 
         <Route path="/sistema-file" element={<MarcoParaSistemaFILE />}>
           <Route index element={<SistemaFILE />} />
-          <Route path="videos" element={<Videos />} />
+          <Route path="word" element={<Word />} />
         </Route>
 
       </Routes>        
     </div>
   )
 }
+
+export default ProtectedRutas;
 
 function MarcoParaSistemaCRUD() {
   return (
@@ -130,4 +139,4 @@ function MarcoParaSistemaFILE() {
   );
 }
 
-export default ProtectedRutas;
+

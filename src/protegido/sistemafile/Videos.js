@@ -2,9 +2,9 @@ import React from 'react'
 
 const Videos = () => {
   return (
-    <div id='file'>
-      <h1>Videos</h1>
-      Página para videos...
+    <div id='sis'>  
+      <h1>VIDEOS</h1>
+      <p>Mira los más ...</p>
     </div>
   )
 }

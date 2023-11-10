@@ -48,9 +48,11 @@ const PublicRutas = () => {
         
         <div id="menu">
           <ul>
-            <li><Link to="/home">Home</Link> </li>
+            <li><Link to="/home">Inicio(Home)</Link> </li>
             <li><Link to="/informacion">Informacion </Link></li>                    
             <li><Link to="/noticias">Noticias </Link></li>
+            <li><Link to="/contacto">Contacto </Link></li>
+          
           </ul>
         </div>
       </nav>
@@ -59,6 +61,7 @@ const PublicRutas = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/nuevoregistro" element={<RegisterForm />} />
         <Route path="/iniciarsesion" element={<LoginForm />} />
+        <Route path="/contacto" element={<Contacto />} />
 
         <Route path="/informacion" element={<Info />} />
         <Route path="/noticias" element={<News />} />
